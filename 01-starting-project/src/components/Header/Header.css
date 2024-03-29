@@ -25,3 +25,7 @@ header {
     color: #8964b0;
     font-family: "Roboto Condensed", sans-serif;
   }
+
+  header .sub-header {
+    font-size: 2rem;
+  }
