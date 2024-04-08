@@ -16,7 +16,7 @@ body {
 
 #header {
   text-align: center;
-  margin: 3rem auto;
+  margin: 1rem auto;
 }
 
 
@@ -34,9 +34,15 @@ body {
 #user-input {
   padding: 1rem;
   max-width: 30rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   border-radius: 4px;
   background: linear-gradient(180deg, #307e6c, #2b996d);
+}
+
+.user-input-grid {
+  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .input-group {
@@ -62,11 +68,12 @@ body {
   background-color: transparent;
   color: #c2e9e0;
   font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 #result {
   max-width: 50rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   table-layout: fixed;
   border-spacing: 1rem;
@@ -86,4 +93,8 @@ body {
 
 .center {
   text-align: center;
+}
+
+.error {
+  color: #aa3636;
 }
