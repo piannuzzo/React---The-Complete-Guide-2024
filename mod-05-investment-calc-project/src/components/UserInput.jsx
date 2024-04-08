@@ -1,8 +1,12 @@
-export default function UserInput({ errorMessage, label, onChange }) {
+export default function UserInput({ errorMessage, label, onChange, value }) {
 	return (
-		<div>
+		<div className="user-input">
 			<label>{label}</label>
-			<input type="text" onChange={ev => onChange(ev.target.value)} />
+			<input
+				type="number"
+				onChange={ev => onChange(ev.target.value)}
+				value={value}
+			/>
 			{
 				errorMessage !== '' && <label className="error">{errorMessage}</label>
 			}

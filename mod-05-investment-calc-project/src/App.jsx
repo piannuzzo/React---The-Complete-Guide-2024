@@ -5,32 +5,28 @@ import AmmortizationTable from "./components/AmmortizationTable"
 
 function App() {
 	const [investmentValues, setInvestmentValues] = useState({
-		initialInvestment: 0,
+		initialInvestment: 100,
 		annualInvestment: 0,
-		expectedReturn: 0,
-		duration: 0,
+		expectedReturn: 5,
+		duration: 10,
 	})
 
-	const handleUserInputsChange = userInputs => {
-		const values = Object.keys(userInputs).map(key => userInputs[key])
-		if (!validValues(values)) {
-			return
-		}
+	const handleUserInputsChange = (key, value) => {
+		value = Number.isNaN(value) ? value : +value
 
 		setInvestmentValues(prevValues => {
-			return { ...prevValues, ...userInputs }
+			return { ...prevValues, [key]: value }
 		})
-	}
-
-	const validValues = (values) => {
-		return values.filter(value => Number.isNaN(value) || value < 0).length === 0
 	}
 
 	return (
 		<div>
 			<Header />
-			<UserInputs onChange={handleUserInputsChange} />
-			<AmmortizationTable {...investmentValues} />
+			<UserInputs
+				onChange={handleUserInputsChange}
+				userInputs={{ ...investmentValues }}
+			/>
+			<AmmortizationTable investmentValues={{ ...investmentValues }} />
 		</div>
 	)
 }

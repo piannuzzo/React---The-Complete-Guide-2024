@@ -1,20 +1,12 @@
 import { calculateInvestmentResults, formatter } from "../util/investment"
 
-export default function AmmortizationTable({
-	initialInvestment,
-	annualInvestment,
-	expectedReturn,
-	duration,
-}) {
-	const data = calculateInvestmentResults({
-		initialInvestment,
-		annualInvestment,
-		expectedReturn,
-		duration,
-	})
-
+export default function AmmortizationTable({ investmentValues }) {
+	const values = Object.values(investmentValues)
+	const hasInvalidValue = values.filter(value => Number.isNaN(value) || value < 0).length > 0
+	const data = hasInvalidValue ? [] : calculateInvestmentResults(investmentValues)
+	const annualInvestment = investmentValues.annualInvestment
 	let totalInterest = 0
-	let investedCapital = initialInvestment
+	let investedCapital = investmentValues.initialInvestment
 
 	return (
 		<table id="result">

@@ -32,7 +32,7 @@ body {
 }
 
 #user-input {
-  padding: 1rem;
+  padding: 1.5rem;
   max-width: 30rem;
   margin: 1rem auto;
   border-radius: 4px;
@@ -40,11 +40,16 @@ body {
 }
 
 .user-input-grid {
-  gap: 1.5rem;
+  gap: .5rem 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+.user-input {
+  display: flex;
+  min-height: 90px;
+  flex-direction: column;
+}
 .input-group {
   display: flex;
   justify-content: space-evenly;
