@@ -24,7 +24,7 @@ class UserFinder extends Component {
 		if (prevState.searchTerm !== this.state.searchTerm) {
 			this.setState({
 				filteredUsers: this.context.users.filter((user) =>
-					user.name.includes(this.state.searchTerm))
+					user.name.toUpperCase().includes(this.state.searchTerm.toUpperCase()))
 			})
 		}
 	}
