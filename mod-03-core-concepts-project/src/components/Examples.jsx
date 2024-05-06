@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Section from './Section.jsx';
-import Tabs from './Tabs.jsx';
-import TabButton from './TabButton.jsx';
-import { EXAMPLES } from '../data.js';
+import { useState } from 'react'
+import Section from './Section.jsx'
+import Tabs from './Tabs.jsx'
+import TabButton from './TabButton.jsx'
+import { EXAMPLES } from '../data.js'
 
 export default function Examples() {
 	const [ state, setState ] = useState({ selectedTab: '' })
@@ -23,7 +23,6 @@ export default function Examples() {
 
 	function handleTabButtonClicked(selectedTab) {
 		setState({ selectedTab })
-		console.log(state.selectedTab)
 	}
 
 	function getTabButtons() {
