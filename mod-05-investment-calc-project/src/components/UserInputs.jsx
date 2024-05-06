@@ -1,19 +1,14 @@
-import { useState } from "react";
-import UserInput from "./UserInput";
+import UserInput from "./UserInput"
 
 export default function UserInputs({ onChange, userInputs }) {
 	const errors = Object.keys(userInputs).reduce((obj, key) => ({...obj, [key]: ''}), {})
 	const errorKeys = Object.keys(errors)
-	delete errorKeys.duration
 
 	errorKeys.forEach(key => {
 		if (Number.isNaN(parseFloat(userInputs[key], 10)) || userInputs[key] < 0) {
-			errors[key] = 'Value must be a positive number.'
+			errors[key] = `Value must be a positive ${key === 'duration' ? 'integer' : 'number'}.`
 		}
 	})
-	if (Number.isNaN(parseInt(userInputs.duration, 10))) {
-		errors.duration = 'Value must be a positive integer.'
-	}
 
 	return (
 		<div id="user-input">

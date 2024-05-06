@@ -24,9 +24,9 @@ function App() {
 			<Header />
 			<UserInputs
 				onChange={handleUserInputsChange}
-				userInputs={{ ...investmentValues }}
+				userInputs={investmentValues}
 			/>
-			<AmmortizationTable investmentValues={{ ...investmentValues }} />
+			<AmmortizationTable investmentValues={investmentValues} />
 		</div>
 	)
 }
